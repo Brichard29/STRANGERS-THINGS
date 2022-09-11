@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { updatePost } from '../api'
 
-const EditPost = ({ posts, token, navigate }) => {
+const EditPost = ({ posts, token, navigate, fetchPosts }) => {
     const { postID } = useParams();
     
     const [currentPost] = posts.filter(post => post._id === postID);
@@ -33,6 +33,8 @@ const EditPost = ({ posts, token, navigate }) => {
         <form onSubmit={(ev) => {
             ev.preventDefault();
             editPost();
+            fetchPosts();
+            updatePost();
             navigate('/posts');
 
         }}>

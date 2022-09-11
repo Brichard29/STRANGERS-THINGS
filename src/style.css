@@ -27,3 +27,17 @@ form {
 .createBtn {
     color: black;
 }
+
+#outer-div-element {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 25rem;
+}
+
+.postDiv {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    flex-direction: column;
+}

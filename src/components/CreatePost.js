@@ -3,7 +3,6 @@ import { createPost as addPost } from '../api';
 
 const CreatePost = ({ token, fetchPosts, navigate }) => {
 
-   // const { title, description, location, price, willDeliver } = newPost;
 
     const [initTitle, setTitle] = useState("");
     const [initDescription, setDescription] = useState("");

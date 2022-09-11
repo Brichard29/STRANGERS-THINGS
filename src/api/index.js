@@ -147,3 +147,22 @@ export const createMessage = async ({postID, token, message}) => {
     console.log('error creating message')
   }
 }
+
+
+
+export const deletePost = async (postID,token) => {
+  console.log('delete',postID);
+  console.log('token',token);
+  try {
+    fetch(`${baseURL}/posts/${postID}`, {
+  method: "DELETE",
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  }
+})
+  } catch(ex) {
+    console.log('ex',ex);
+    console.log('error deleting post')
+  }
+}

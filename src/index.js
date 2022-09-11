@@ -12,11 +12,13 @@ import {
     Login,
     CreatePost,
     SinglePostView,
-    EditPost
+    EditPost,
+    DeletePost
 } from './components';
 import {
     getPosts,
-    getUserDetails
+    getUserDetails,
+    deletePost    
 } from './api';
 
 
@@ -70,6 +72,18 @@ const App = () => {
         getMe();
     }, [token])
 
+    const handleDeleteFunction = async (postId) => {
+        console.log('postId',postId);
+
+        if(token){
+            const deleteUser = await deletePost(postId._id,token);
+            console.log('deleteUser', deleteUser);
+            fetchPosts();
+
+        }
+
+
+    }
     return (
         <div>
             <Navbar logout={ logout } token={ token } />
@@ -83,6 +97,7 @@ const App = () => {
                     path='/posts' 
                     element={<Posts 
                     posts={posts} 
+                    handleDeleteFunction={handleDeleteFunction}
                     />} 
                 />
                 <Route
@@ -109,6 +124,7 @@ const App = () => {
                     element={<EditPost 
                     posts={ posts }
                     token={ token }
+                    fetchPosts={ fetchPosts }
                     navigate={ navigate }
                     /> } 
                 />
