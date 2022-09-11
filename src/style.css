@@ -1,0 +1,29 @@
+
+
+
+nav {
+    background-color: rgb(39, 39, 121);
+    padding: 0.5rem;
+    display: flex;
+    justify-content: right;
+}
+
+a {
+    margin: 2rem;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewBtn {
+    color: black;
+}
+
+.createBtn {
+    color: black;
+}
