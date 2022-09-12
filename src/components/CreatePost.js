@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { createPost as addPost } from '../api';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const CreatePost = ({ token, fetchPosts, navigate }) => {
 
@@ -33,38 +36,41 @@ const CreatePost = ({ token, fetchPosts, navigate }) => {
             ev.preventDefault();
             handleSubmit();
         }}>
-            <input
+            <h1>Create a New Post</h1>
+
+            <TextField className='newPostForm' variant="outlined"
                 type='text'
                 placeholder='Title'
                 onChange={(ev) => setTitle(ev.target.value)}
             />
 
-            <input
+            <TextField className='newPostForm' variant="outlined"
                 type='text'
                 placeholder='Description'
                 onChange={(ev) => setDescription(ev.target.value)}
             />
 
-            <input
+            <TextField className='newPostForm' variant="outlined"
                 type='text'
                 placeholder='Price'
                 onChange={(ev) => setPrice(ev.target.value)}
             />
 
-            <input
+            <TextField className='newPostForm' variant="outlined"
                 type='text'
                 placeholder='Location'
                 onChange={(ev) => setLocation(ev.target.value)}
             />
+            <p>Will Deliver?</p>
 
-            <input
+            <Checkbox className='newPostForm' variant="outlined"
                 label='Will Deliver?'
                 type='checkbox'
                 checked={initWillDeliver}
                 onChange={(ev) => setWillDeliver(ev.target.checked)}
             />
 
-         <button type="submit">Create New Post</button>
+         <Button type="submit">Create New Post</Button>
         </form>
         </>
     )

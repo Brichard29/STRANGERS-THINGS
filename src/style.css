@@ -41,3 +41,12 @@ form {
     border: 2px solid black;
     flex-direction: column;
 }
+
+
+.newPostForm {
+    margin-bottom: 2rem;
+}
+
+div {
+    margin-bottom: 2rem;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 const Posts = ({ posts,handleDeleteFunction }) => {
 
@@ -13,9 +14,9 @@ console.log('handleDeleteFunction',handleDeleteFunction);
 
     return (
         <>
-        <button>
+        <Button>
             <Link className='createBtn' to='/posts/create-post'>Create New Post</Link>
-        </button>
+        </Button>
 
         <div id='outer-div-element'>
         {
@@ -31,12 +32,18 @@ console.log('handleDeleteFunction',handleDeleteFunction);
                         {
                             isAuthor ? (
                                 <>
-                                <Link className='viewBtn' to={`/posts/${_id}`}>View</Link>
-                                <Link to={`/posts/edit-post/${_id}`}>Edit</Link>
-                                <button onClick={(e)=>deletePost(e,{_id})}>Delete</button>
+                                <Button>
+                                    <Link className='viewBtn' to={`/posts/${_id}`}>View</Link>
+                                </Button>
+                                <Button>
+                                    <Link to={`/posts/edit-post/${_id}`}>Edit</Link>
+                                </Button>
+                                <Button onClick={(e)=>deletePost(e,{_id})}>Delete</Button>
                                 </>
                             ) : (
-                                <Link className='viewBtn' to={`/posts/${_id}`}>View</Link>
+                                <Button>
+                                    <Link className='viewBtn' to={`/posts/${_id}`}>View</Link>
+                                </Button>
                             )
                         }
                     </div>

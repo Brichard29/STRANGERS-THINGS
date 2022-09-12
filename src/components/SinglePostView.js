@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { createMessage } from '../api';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 const SendMessage = ({ postID, token }) => {
     const [message, setMessage] = useState({content: ''});
@@ -15,12 +17,12 @@ const SendMessage = ({ postID, token }) => {
             addMessage();
 
         }}>
-            <input
+            <TextField variant="outlined"
                 type='text'
                 placeholder='Enter Message'
                 onChange={(ev) => setMessage({content: ev.target.value})}
             />
-            <button type='submit'>Send Message</button>
+            <Button type='submit'>Send Message</Button>
         </form>
     )
 }
@@ -42,7 +44,7 @@ const SinglePostView = ({ posts, token }) => {
                 <p>Location: {location}</p>
                 <p>Will Deliver: {willDeliver}</p>
             </div>
-            <button onClick={() => setActivateMessage(!activateMessage)}>Send a Message</button>
+            <Button onClick={() => setActivateMessage(!activateMessage)}>Send a Message</Button>
             {
                 activateMessage && <SendMessage postID={ postID } token={ token } />
             }

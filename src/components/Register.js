@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { registerUser } from '../api';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 
 const Register = ({ setToken, navigate }) => {
@@ -23,17 +25,19 @@ const Register = ({ setToken, navigate }) => {
             event.preventDefault();
             handleSubmit();
         }}>
-            <input
+            <h1>Sign up</h1>
+
+            <TextField variant="outlined"
                 type='text'
                 placeholder='Enter Username'
                 onChange={(event) => setUsername(event.target.value)}
             />
-            <input
+            <TextField variant="outlined"
                 type='text'
                 placeholder='Enter Password'
                 onChange={(event) => setPassword(event.target.value)}
             />
-            <button type='submit'>Submit</button>
+            <Button type='submit'>Submit</Button>
         </form>
     )
 }

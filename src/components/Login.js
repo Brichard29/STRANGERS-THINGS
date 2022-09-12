@@ -24,6 +24,7 @@ const Login = ({ setToken, navigate }) => {
             event.preventDefault();
             handleSubmit();
         }}>
+            <h1>Login</h1>
             <TextField variant="outlined"
                 type='text'
                 placeholder='Enter Username'
