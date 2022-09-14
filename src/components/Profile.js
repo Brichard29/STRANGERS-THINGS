@@ -33,9 +33,14 @@ const Profile = ({ user }) => {
                 {
                     messages && messages.map(message => {
                         const fromUserID = message.fromUser._id;
+                        const {title} = message.post;
                         if (userID === fromUserID) {
                             return (
-                                <div key={message._id}>{message.content}</div>
+                                <div key={message._id}>
+                                    <p>Message: {message.content}</p>
+                                    <p>Post Reference: {title}</p>
+                                </div>
+
                             )
                         }
                     })

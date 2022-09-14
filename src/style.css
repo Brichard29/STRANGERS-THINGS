@@ -8,7 +8,7 @@ nav {
     justify-content: right;
 }
 
-a {
+.navBtn {
     margin: 2rem;
     color: white;
 }
@@ -20,10 +20,6 @@ form {
     justify-content: center;
 }
 
-.viewBtn {
-    color: black;
-}
-
 .createBtn {
     color: black;
 }
@@ -31,8 +27,8 @@ form {
 #outer-div-element {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    width: 25rem;
+    flex-direction: row;
+    /* width: 25rem; */
 }
 
 .postDiv {
@@ -40,6 +36,10 @@ form {
     flex-wrap: wrap;
     border: 2px solid black;
     flex-direction: column;
+    width: 30em;
+    height: 30em;
+    margin: 1em;
+    border-radius: 2%;
 }
 
 
@@ -49,4 +49,17 @@ form {
 
 div {
     margin-bottom: 2rem;
+}
+
+.postBtn {
+    width: 8em;
+    height: 2em;
+    color: black;
+}
+
+.postBtnCont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }

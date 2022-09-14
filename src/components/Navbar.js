@@ -7,20 +7,20 @@ const Navbar = ({ logout, token }) => {
 
 
             <nav>
-                <Link to='/'>Home</Link>
-                <Link to='/posts'>Posts</Link>
+                <Link className='navBtn' to='/'>Home</Link>
+                <Link className='navBtn' to='/posts'>Posts</Link>
 
                 {
                     token ? (
                         <>
-                        <Link to='/profile'>Profile</Link>
-                        <Link to='/' onClick={() => logout()}>Logout</Link>
+                        <Link className='navBtn' to='/profile'>Profile</Link>
+                        <Link className='navBtn' to='/' onClick={() => logout()}>Logout</Link>
                         </>
 
                     ) : (
                       <>
-                        <Link to='/register'>Register</Link>
-                        <Link to='/login'>Login</Link>
+                        <Link className='navBtn' to='/register'>Register</Link>
+                        <Link className='navBtn' to='/login'>Login</Link>
                       </>
 
                     )

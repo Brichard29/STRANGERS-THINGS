@@ -32,18 +32,24 @@ console.log('handleDeleteFunction',handleDeleteFunction);
                         {
                             isAuthor ? (
                                 <>
-                                <Button>
-                                    <Link className='viewBtn' to={`/posts/${_id}`}>View</Link>
-                                </Button>
-                                <Button>
+                                <div className='postBtnCont'>
+                                <button className='postBtn'>
+                                    <Link className='postBtn' to={`/posts/${_id}`}>View</Link>
+                                </button>
+                                <button className='postBtn'>
                                     <Link to={`/posts/edit-post/${_id}`}>Edit</Link>
-                                </Button>
-                                <Button onClick={(e)=>deletePost(e,{_id})}>Delete</Button>
+                                </button>
+                                <button className='postBtn' onClick={(e)=>deletePost(e,{_id})}>Delete</button>
+                                </div>
                                 </>
                             ) : (
-                                <Button>
-                                    <Link className='viewBtn' to={`/posts/${_id}`}>View</Link>
-                                </Button>
+                                <>
+                                <div className='postBtnCont'>
+                                <button className='postBtn'>
+                                    <Link to={`/posts/${_id}`}>View</Link>
+                                </button>
+                                </div>
+                                </>
                             )
                         }
                     </div>
