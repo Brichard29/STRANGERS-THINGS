@@ -35,6 +35,8 @@ const SinglePostView = ({ posts, token }) => {
     console.log(currentPost)
     const { title, description, location, price, willDeliver } = currentPost;
 
+
+    if (token) {
     return (
         <div>
             <div>
@@ -50,6 +52,19 @@ const SinglePostView = ({ posts, token }) => {
             }
         </div>
     )
+        } else {
+            return(
+                <div>
+                <div>
+                    <h3>{title}</h3>
+                    <p>Description:{description}</p>
+                    <p>Price: {price}</p>
+                    <p>Location: {location}</p>
+                    <p>Will Deliver: {willDeliver}</p>
+                </div>
+            </div>
+            )
+        }
 }
 
 export default SinglePostView;

@@ -40,6 +40,7 @@ form {
     height: 30em;
     margin: 1em;
     border-radius: 2%;
+    background-color: rgb(203, 203, 203);
 }
 
 
@@ -62,4 +63,9 @@ div {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+}
+
+.homeTitle {
+    text-align: center;
+    font-size: 5rem;
 }
