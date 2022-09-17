@@ -105,11 +105,14 @@ const App = () => {
                     element={<SinglePostView 
                     posts={ posts } 
                     token={ token }
+                    navigate={ navigate }
                     /> }
                 />
                 <Route 
                     path='/profile' 
-                    element={<Profile user={ user} />} 
+                    element={<Profile user={ user}
+                    navigate={ navigate } 
+                    />} 
                 />
                 <Route
                     exact path='/posts/create-post'

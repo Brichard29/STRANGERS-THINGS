@@ -4,7 +4,7 @@ import { createMessage } from '../api';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-const SendMessage = ({ postID, token }) => {
+const SendMessage = ({ postID, token, navigate }) => {
     const [message, setMessage] = useState({content: ''});
 
     async function addMessage() {
@@ -15,6 +15,8 @@ const SendMessage = ({ postID, token }) => {
         <form onSubmit={(ev) => {
             ev.preventDefault();
             addMessage();
+            navigate('/profile');
+
 
         }}>
             <TextField variant="outlined"
